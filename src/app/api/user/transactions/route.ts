@@ -28,7 +28,7 @@ export async function GET(req: NextRequest) {
         });
 
         const transactions = [
-            ...bookings.map(b => ({
+            ...bookings.map((b: { id: string; serviceId: string; amount: number; status: string; createdAt: Date }) => ({
                 id: `BK-${b.id}`,
                 type: "BOOKING" as const,
                 description: `Booking: ${b.serviceId}`,
@@ -37,7 +37,7 @@ export async function GET(req: NextRequest) {
                 createdAt: b.createdAt.toISOString(),
                 referenceId: b.id
             })),
-            ...payments.map(p => ({
+            ...payments.map((p: { id: string; amount: number; status: string; createdAt: Date; bookingId: string | null }) => ({
                 id: `PY-${p.id}`,
                 type: "PAYMENT" as const,
                 description: `Payment for booking`,

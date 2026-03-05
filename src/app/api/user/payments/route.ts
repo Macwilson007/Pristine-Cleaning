@@ -20,7 +20,7 @@ export async function GET(req: NextRequest) {
             orderBy: { createdAt: "desc" }
         });
 
-        const result = payments.map(p => ({
+        const result = payments.map((p: { id: string; amount: number; paymentMethod: string; status: string; transactionId: string | null; createdAt: Date; bookingId: string | null }) => ({
             id: p.id,
             amount: p.amount,
             paymentMethod: p.paymentMethod,
