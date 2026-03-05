@@ -93,7 +93,7 @@ export default function SettingsPage() {
                                 value={settings.email}
                                 onChange={(e) => setSettings({ ...settings, email: e.target.value })}
                                 className="w-full bg-black/40 border border-white/10 rounded-xl py-3 px-4 text-white outline-none focus:border-[var(--color-accent)] transition-colors"
-                                placeholder="hello@pristineclean.com"
+                                placeholder="hello@mrtidy.com"
                             />
                         </div>
 

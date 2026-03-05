@@ -116,7 +116,7 @@ export default function LoginPage() {
                                     type="email"
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
-                                    placeholder="admin@pristine.agency"
+                                    placeholder="admin@mrtidy.com"
                                     required
                                     className="w-full bg-black/40 border border-white/10 rounded-xl py-4 pl-12 pr-4 text-sm text-white outline-none focus:border-[var(--color-accent)] focus:bg-black/60 transition-all font-semibold placeholder:text-white/20"
                                 />

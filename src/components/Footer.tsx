@@ -35,7 +35,7 @@ interface SiteSettings {
 
 export default function Footer() {
     const [settings, setSettings] = useState<SiteSettings>({
-        email: "hello@pristineclean.com",
+        email: "hello@mrtidy.com",
         phone: "+1 (555) 000-0000",
         address: "Serving all major metro areas",
         twitter: "",
