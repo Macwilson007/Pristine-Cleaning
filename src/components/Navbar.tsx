@@ -50,7 +50,7 @@ export default function Navbar() {
                         className="text-xl font-bold tracking-[0.15em] uppercase"
                         style={{ fontFamily: "var(--font-heading)" }}
                     >
-                        PRISTINE
+                        MR TIDY
                     </span>
                 </Link>
 

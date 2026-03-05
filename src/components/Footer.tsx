@@ -68,7 +68,7 @@ export default function Footer() {
                                 className="text-xl font-bold tracking-[0.15em] uppercase"
                                 style={{ fontFamily: "var(--font-heading)" }}
                             >
-                                PRISTINE
+                                MR TIDY
                             </span>
                         </Link>
                         <p className="text-sm max-w-sm leading-relaxed">

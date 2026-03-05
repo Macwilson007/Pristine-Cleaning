@@ -18,14 +18,14 @@ interface Message {
     content: string;
 }
 
-const WELCOME_MESSAGE = "Hi there! 👋 I'm PRISTINE's AI receptionist. I can help you with:\n\n• **Booking a cleaning session**\n• **Our services & pricing**\n• **Service areas**\n• **Rescheduling or cancellations**\n\nHow can I help you today?";
+const WELCOME_MESSAGE = "Hi there! 👋 I'm MR TIDY's AI receptionist. I can help you with:\n\n• **Booking a cleaning session**\n• **Our services & pricing**\n• **Service areas**\n• **Rescheduling or cancellations**\n\nHow can I help you today?";
 
 function getAIResponse(input: string): string {
     const msg = input.toLowerCase().trim();
 
     // Greetings
     if (/^(hi|hello|hey|good morning|good afternoon|good evening|howdy|sup|yo)/.test(msg)) {
-        return "Hello! Welcome to PRISTINE. 😊 How can I assist you today? I can help with booking, pricing, services, or any questions you might have.";
+        return "Hello! Welcome to MR TIDY. 😊 How can I assist you today? I can help with booking, pricing, services, or any questions you might have.";
     }
 
     // Booking intent
@@ -65,7 +65,7 @@ function getAIResponse(input: string): string {
 
     // About
     if (/(about|who are you|company|team|story|founded|background)/.test(msg)) {
-        return "PRISTINE is Nigeria's premium tech-enabled cleaning service. We've completed **2,400+ cleans** with a **4.9/5 rating** and **98% rebook rate**.\n\nOur teams are vetted, trained, insured, and equipped with commercial-grade tools. [Learn more about us →](/about)";
+        return "MR TIDY is Nigeria's premium tech-enabled cleaning service. We've completed **2,400+ cleans** with a **4.9/5 rating** and **98% rebook rate**.\n\nOur teams are vetted, trained, insured, and equipped with commercial-grade tools. [Learn more about us →](/about)";
     }
 
     // Contact / WhatsApp
@@ -80,7 +80,7 @@ function getAIResponse(input: string): string {
 
     // Bye
     if (/(bye|goodbye|see you|take care|that's all|nothing else)/.test(msg)) {
-        return "Thank you for chatting with PRISTINE! 👋 Have a wonderful day. Remember, you can always reach us here or [book a clean](/book) anytime!";
+        return "Thank you for chatting with MR TIDY! 👋 Have a wonderful day. Remember, you can always reach us here or [book a clean](/book) anytime!";
     }
 
     // Products / eco
@@ -370,7 +370,7 @@ export default function FloatingReceptionist() {
                                     <Send className="w-4 h-4 text-black" />
                                 </button>
                             </div>
-                            <p className="text-[9px] text-white/20 text-center mt-2">Powered by PRISTINE AI • Available 24/7</p>
+                            <p className="text-[9px] text-white/20 text-center mt-2">Powered by MR TIDY AI • Available 24/7</p>
                         </div>
                     </motion.div>
                 )}
