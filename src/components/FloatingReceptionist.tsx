@@ -18,83 +18,83 @@ interface Message {
     content: string;
 }
 
-const WELCOME_MESSAGE = "Hi there! 👋 I'm MR TIDY's AI receptionist. I can help you with:\n\n• **Booking a cleaning session**\n• **Our services & pricing**\n• **Service areas**\n• **Rescheduling or cancellations**\n\nHow can I help you today?";
+const WELCOME_MESSAGE = "Hi there! 👋 I'm MR TIDY's AI assistant. Need help booking a clean, have questions about our services, or just want to chat? I'm here to help!";
 
 function getAIResponse(input: string): string {
     const msg = input.toLowerCase().trim();
 
     // Greetings
     if (/^(hi|hello|hey|good morning|good afternoon|good evening|howdy|sup|yo)/.test(msg)) {
-        return "Hello! Welcome to MR TIDY. 😊 How can I assist you today? I can help with booking, pricing, services, or any questions you might have.";
+        return "Hey there! 😊 How's it going? What can I help you with today?";
     }
 
     // Booking intent
     if (/(book|schedule|appointment|reserve|i need a clean|i want to book|set up)/.test(msg)) {
-        return "Great choice! 🗓️ You can book a session directly on our **[Booking Page](/book)**.\n\nJust select your service type, pick a date and time, and we'll assign a vetted team to your location. Would you like to know about our services or pricing first?";
+        return "Nice! You can book right here: https://mrtidy.com/book\n\nPick your service, choose a time, and we'll send a pro team your way. Want to know anything first?";
     }
 
     // Pricing
     if (/(price|pricing|cost|how much|rate|charge|fee|afford|expensive|cheap|budget)/.test(msg)) {
-        return "Here are our current rates:\n\n• **Essential (Residential):** ₦25,000/session\n• **Premium (Deep Clean):** ₦50,000/session\n• **Enterprise (Commercial):** Custom pricing\n\n💡 **Recurring discounts:** Weekly saves 15%, bi-weekly saves 10%, monthly saves 5%.\n\nWould you like to [see full pricing details](/pricing) or [book now](/book)?";
+        return "Here's our quick pricing:\n\n🏠 Residential: ₦25k\n✨ Deep Clean: ₦50k\n🏢 Commercial: Custom\n🛏️ Rental: From ₦30k\n\nBook regular and save - weekly 15% off, bi-weekly 10%, monthly 5%!";
     }
 
     // Services
     if (/(service|what do you (do|offer|clean)|type|residential|commercial|deep clean|turnover|rental|airbnb)/.test(msg)) {
-        return "We offer four specialised service tiers:\n\n🏠 **Residential Cleaning** — Regular home maintenance\n🏢 **Commercial Cleaning** — Offices & workspaces\n🛏️ **Rental Turnover** — Airbnb & short-term properties\n✨ **Deep Cleaning** — Intensive top-to-bottom clean\n\nEach service includes eco-friendly products, vetted professionals, and our satisfaction guarantee. [View full details →](/services)";
+        return "We've got a few options:\n\n🏠 Residential - regular home cleaning\n✨ Deep Clean - thorough top-to-bottom\n🏢 Commercial - offices & workspaces\n🛏️ Rental Turnover - for Airbnb hosts\n\nWhich one sounds like what you need?";
     }
 
     // Location/areas
     if (/(where|location|area|lagos|abuja|port harcourt|ibadan|lekki|ajah|victoria island|ikoyi|city|cover|operate)/.test(msg)) {
-        return "We currently operate in:\n\n📍 Lagos (Island & Mainland, Lekki, Ajah, VI)\n📍 Abuja (FCT)\n📍 Port Harcourt\n📍 Ibadan\n\nWe're expanding to more cities soon! Is your area covered?";
+        return "We're in Lagos (island & mainland, Lekki, Ajah, VI), Abuja, Port Harcourt, and Ibadan! Let me know your area and I can confirm. 🚗";
     }
 
     // Cancel/reschedule
     if (/(cancel|reschedule|change date|move|postpone)/.test(msg)) {
-        return "No problem! You can cancel or reschedule **free of charge** up to 12 hours before your appointment. Within 12 hours, a ₦5,000 late cancellation fee applies.\n\nTo reschedule, simply contact us via WhatsApp or reply here with your booking details. 📞";
+        return "No problem! Just let us know at least 12 hours before to avoid a fee. Just WhatsApp us with your booking details! 📱";
     }
 
     // Payment
     if (/(pay|payment|transfer|card|paystack|bank|mobile money)/.test(msg)) {
-        return "We accept:\n\n💳 **Debit/Credit cards** (via Paystack)\n🏦 **Bank transfers**\n📱 **Mobile money**\n\nPayment is collected **after** the clean is completed — you only pay when you're satisfied. No upfront fees!";
+        return "We take cards (Paystack), bank transfer, and mobile money. The best part? You pay AFTER the clean - only when you're happy! 💳";
     }
 
     // How it works
     if (/(how (does it|do you) work|process|steps|what happens)/.test(msg)) {
-        return "It's simple! Here's how:\n\n**1.** Tell us what you need (book online, WhatsApp, or chat here)\n**2.** We confirm & assign a vetted team\n**3.** Your team arrives with pro-grade equipment\n**4.** Quality check + satisfaction guarantee\n\n[See the full process →](/how-it-works)";
+        return "It's easy! 👇\n\n1. Book online or message us\n2. We confirm & assign a team\n3. They show up with pro gear\n4. You check, then pay - only if satisfied!\n\nFull details: https://mrtidy.com/how-it-works";
     }
 
     // About
     if (/(about|who are you|company|team|story|founded|background)/.test(msg)) {
-        return "MR TIDY is Nigeria's premium tech-enabled cleaning service. We've completed **2,400+ cleans** with a **4.9/5 rating** and **98% rebook rate**.\n\nOur teams are vetted, trained, insured, and equipped with commercial-grade tools. [Learn more about us →](/about)";
+        return "MR TIDY is Nigeria's favorite cleaning service! We've done 2,400+ cleans with a 4.9⭐ rating. Our teams are vetted, insured, and use eco-friendly products. Learn more: https://mrtidy.com/about";
     }
 
     // Contact / WhatsApp
     if (/(contact|phone|call|whatsapp|email|reach|talk to someone|human|speak)/.test(msg)) {
-        return "You can reach us through:\n\n📧 **Email:** hello@pristineclean.com\n📱 **WhatsApp:** +234 800 000 0000\n📞 **Phone:** +234 800 000 0000\n\nOur human support team is available Mon–Sat, 8 AM – 8 PM WAT.";
+        return "Here's how to reach us:\n\n📱 WhatsApp: +234 800 000 0000\n📧 Email: hello@mrtidy.com\n\nHuman support: Mon-Sat, 8am-8pm!";
     }
 
     // Thank you
     if (/(thank|thanks|cheers|appreciate|great|awesome|perfect|wonderful)/.test(msg)) {
-        return "You're welcome! 😊 Is there anything else I can help you with? I'm here whenever you need me.";
+        return "You're welcome! 😊 Anything else I can help with?";
     }
 
     // Bye
     if (/(bye|goodbye|see you|take care|that's all|nothing else)/.test(msg)) {
-        return "Thank you for chatting with MR TIDY! 👋 Have a wonderful day. Remember, you can always reach us here or [book a clean](/book) anytime!";
+        return "Thanks for chatting! 👋 Have a great day, and remember - we're here whenever you need us!";
     }
 
     // Products / eco
     if (/(product|chemical|safe|eco|green|toxic|allergi|child|pet|baby)/.test(msg)) {
-        return "All our cleaning products are **biodegradable, non-toxic, and hypoallergenic**. They're completely safe for children, pets, and people with sensitive skin or respiratory conditions. 🌿\n\nWe never use harsh bleach or ammonia-based chemicals in homes.";
+        return "All our products are eco-friendly and totally safe! 🌿 Non-toxic, biodegradable, hypoallergenic - safe for kids, pets, everyone!";
     }
 
     // Time / availability
     if (/(time|available|when|hours|early|late|weekend|sunday|saturday|emergency|urgent|asap)/.test(msg)) {
-        return "We're available **7 days a week, 7 AM – 9 PM**. ⏰\n\nNeed an emergency or same-day clean? Our rapid-response teams can often accommodate within 2-3 hours. [Book now →](/book)";
+        return "We're open 7 days a week, 7am-9pm! ⏰\n\nNeed something urgent? We can often squeeze in same-day within 2-3 hours. Just ask!";
     }
 
     // Default fallback
-    return "I'd be happy to help with that! For specific requests, I can assist with:\n\n• **Booking** — schedule a cleaning session\n• **Pricing** — view our rates\n• **Services** — explore what we offer\n• **Areas** — check if we cover your location\n\nOr feel free to ask me anything else! 😊";
+    return "Gotcha! I can help with bookings, pricing, services, or any questions you have. What would you like to know? 😊";
 }
 
 function renderMarkdown(text: string) {
@@ -213,7 +213,7 @@ export default function FloatingReceptionist() {
         handleSendMessage(input);
     };
 
-    const handleSendMessage = (textToSubmit: string) => {
+    const handleSendMessage = async (textToSubmit: string) => {
         const trimmed = textToSubmit.trim();
         if (!trimmed) return;
 
@@ -223,19 +223,35 @@ export default function FloatingReceptionist() {
         }
 
         const userMsg: Message = { role: "user", content: trimmed };
-        setMessages((prev) => [...prev, userMsg]);
+        const newMessages = [...messages, userMsg];
+        setMessages(newMessages);
         setInput("");
         setIsTyping(true);
 
         // Simulate slight delay for natural feel
-        setTimeout(() => {
-            const response = getAIResponse(trimmed);
-            setMessages((prev) => [...prev, { role: "assistant", content: response }]);
-            setIsTyping(false);
+        setTimeout(async () => {
+            try {
+                const res = await fetch('/api/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ messages: newMessages })
+                });
 
-            // Speak the response
-            speakResponse(response);
-
+                if (res.ok) {
+                    const data = await res.json();
+                    setMessages(prev => [...prev, { role: "assistant", content: data.message }]);
+                    speakResponse(data.message);
+                } else {
+                    throw new Error('API error');
+                }
+            } catch (err) {
+                console.error("Chat error, using fallback:", err);
+                const response = getAIResponse(trimmed);
+                setMessages(prev => [...prev, { role: "assistant", content: response }]);
+                speakResponse(response);
+            } finally {
+                setIsTyping(false);
+            }
         }, 600 + Math.random() * 800);
     };
 
@@ -274,7 +290,7 @@ export default function FloatingReceptionist() {
                                     <Bot className="w-5 h-5 text-[var(--color-accent)]" />
                                 </div>
                                 <div>
-                                    <h3 className="text-sm font-black uppercase tracking-tight">AI Receptionist</h3>
+                                    <h3 className="text-sm font-black uppercase tracking-tight">MR TIDY Assistant</h3>
                                     <div className="flex items-center gap-1.5">
                                         <div className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
                                         <span className="text-[10px] text-green-400 font-bold uppercase tracking-widest">Online</span>
@@ -370,7 +386,7 @@ export default function FloatingReceptionist() {
                                     <Send className="w-4 h-4 text-black" />
                                 </button>
                             </div>
-                            <p className="text-[9px] text-white/20 text-center mt-2">Powered by MR TIDY AI • Available 24/7</p>
+                            <p className="text-[9px] text-white/20 text-center mt-2">Powered by Groq AI • Available 24/7</p>
                         </div>
                     </motion.div>
                 )}
