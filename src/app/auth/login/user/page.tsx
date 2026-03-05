@@ -40,6 +40,12 @@ export default function UserLoginPage() {
             if (result?.error) {
                 setError("Invalid email or password.");
                 setIsLoading(false);
+            } else {
+                // Login succeeded, redirect to user dashboard
+                router.refresh();
+                setTimeout(() => {
+                    router.push("/dashboard");
+                }, 500);
             }
         } catch (err) {
             setError("Something went wrong. Try again.");

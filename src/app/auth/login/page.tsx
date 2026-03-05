@@ -41,10 +41,16 @@ export default function LoginPage() {
                 setError("Invalid Vector ID or Access Protocol.");
                 setIsLoading(false);
             } else {
-                // Login succeeded, check role and redirect
+                // Login succeeded, refresh session to get role
                 router.refresh();
                 setTimeout(() => {
-                    router.push("/admin");
+                    // Check URL for role hint or default to user dashboard
+                    const currentPath = window.location.pathname;
+                    if (currentPath.includes('/admin')) {
+                        router.push("/admin");
+                    } else {
+                        router.push("/dashboard");
+                    }
                 }, 500);
             }
         } catch (err) {
@@ -52,6 +58,18 @@ export default function LoginPage() {
             setIsLoading(false);
         }
     };
+
+    // Also handle session-based redirect on page load
+    useEffect(() => {
+        if (session) {
+            const role = (session.user as any)?.role;
+            if (role === "ADMIN") {
+                router.push("/admin");
+            } else {
+                router.push("/dashboard");
+            }
+        }
+    }, [session, router]);
 
     return (
         <div className="min-h-screen bg-[var(--color-black)] flex items-center justify-center p-6 relative overflow-hidden">
